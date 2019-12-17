@@ -1,0 +1,41 @@
+from random import *
+
+def bingo():
+	# inicializamos el carton invocando una lista y un numero al azar, si no ponemos nada el programa crashiara de lo lindo
+	carton=[]
+	carton.append(randint(1,90))
+	
+	# este es el verificador, esta funcion nos servira para que en nuestro carton de bingo no haya valores repetidos y si el numero que estamos por poner esta repetido, y si esta repetido advierte con True o False si esta repetido o no
+	def verificador():
+			nroRepetido=False
+			for j in carton:
+				if j==m:
+					nroRepetido=True
+			return nroRepetido
+	
+	# aqui lo que hago es... invoco las vueltas (en este caso 14), y en cada vuelta pongo un numero en mi carton 
+	for i in range (1,15):
+		m=randint(1,90)
+		verificaNumero=verificador()
+		
+		# lo que hace este bucle es llamar a la funcion verificador  y fijarse si el numero que estamos por poner esta repetido, y si esta repetido lo que hace es sacar otro numero aleatorio hasta que saca un numero que no este en el carton
+		while verificaNumero==True:
+			m=randint(1,90)
+			verificaNumero=verificador()
+		
+		carton.append(m)
+	carton.sort()
+	return carton
+
+
+# esto es irrevelante, simplemente esta para verificar que todo este bien :D
+contador=int(input("cuantos cartones quiere: "))
+print("perfecto maricon, degenerado y arrebatado... aqui los tienes")
+print("")
+print("")
+print("")
+for i in range(1,contador+1):
+	rnd=randint(1000,9999)
+	print("nro de carton:"+str(rnd))
+	print(bingo())
+	print("")
