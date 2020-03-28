@@ -40,7 +40,7 @@ def bingo():
 
 # esto es irrevelante, simplemente esta para verificar que todo este bien :D
 contador=int(input("cuantos cartones quiere: "))
-print("perfecto maricon, degenerado y arrebatado... aqui los tienes")
+print("perfecto ... aqui los tienes")
 print("")
 print("")
 print("")
